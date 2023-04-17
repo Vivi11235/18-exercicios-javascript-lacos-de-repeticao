@@ -280,14 +280,35 @@ enquanto a soma seja menor que 500 e no final mostre qual o
 }
 
 function exercicio15(){
-/*Crie um algoritmo que armazene três valores, para cada um dos lados de um triângulo: A, B e C. Verifique se os lados fornecidos formam realmente um triângulo. Se formar, deve mostrar no console o tipo de triângulo: isósceles, escaleno ou equilátero.
-a. Para verificar se os lados fornecidos formam um triângulo: A < B + C e B < A + C e C < A + B.
+/*Crie um algoritmo que armazene três valores, para cada um dos lados de 
+um triângulo: A, B e C. Verifique se os lados fornecidos formam realmente 
+um triângulo. Se formar, deve mostrar no console o tipo de triângulo: 
+isósceles, escaleno ou equilátero.
+a. Para verificar se os lados fornecidos formam um triângulo: 
+A < B + C e B < A + C e C < A + B.
 b. Triângulo isósceles: possui dois lados iguais (A=B ou A=C ou B=C);
 c. Triângulo escaleno: possui todos os lados diferentes (A<>B e B<>C e A<>C);
 d. Triângulo equilátero: possui todos os lados iguais (A=B e B=C);*/
 
-    
+    let ladoA = Number.parseFloat(prompt('Digite o tamanho, em centímetros, do primeiro lado de um triângulo, de modo que este seja menor que a soma dos outros dois lados: '));
 
+    let ladoB = Number.parseFloat(prompt('Digite o tamanho, em centímetros, do segundo lado de um triângulo, de modo que este seja menor que a soma dos outros dois lados: '));
+
+    let ladoC = Number.parseFloat(prompt('Digite o tamanho, em centímetros, do terceiro lado de um triângulo, de modo que este seja menor que a soma dos outros dois lados: '));
+
+    if(ladoA<(ladoB+ladoC)&&ladoB<(ladoA+ladoC)&&ladoC<(ladoB+ladoA)){
+        if((ladoA==ladoB||ladoB==ladoC||ladoC==ladoA)&&(ladoA!==ladoB||ladoB!==ladoC||ladoC!==ladoA)){
+            alert(`O triângulo informado é um triângulo isósceles. Ou seja, tem dois lados iguais.`);
+        }else if(ladoA!==ladoB&&ladoB!==ladoC&&ladoC!==ladoA){
+            alert(`O triângulo informado é um triângulo escaleno. Ou seja, cada lado tem tamanho diferente de cada um dos outros dois lado.`);
+        }else if(ladoA==ladoB&&ladoB==ladoC&&ladoC==ladoA){
+            alert(`O triângulo informado é um triângulo equilátero, ou seja, tem todos os lados iguais.`);
+        }else{
+            alert(`Alguma das alternativas foi preenchida incorretamente. Para resultar em um triângulo com os valores infromados, informe três números positivos, e de modo que cada lado seja menor que os outros dois.`)
+        }
+    }else{
+        alert(`Os valores informados não resultam em um triângulo. Digite os valores de modo que cada lado seja menor que a soma dos outros dois.`);
+    }
 
 }
 
